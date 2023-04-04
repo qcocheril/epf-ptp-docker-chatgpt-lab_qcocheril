@@ -3,6 +3,11 @@ Chat GPT project
 
 This example shows a simple Flask GPT application.
 
+## Requirements
+- `python` 3.10
+- `pip`
+-  (maybe)`flask` (`sudo apt-get install flask`)
+
 Running the application
 -----------------------
 
