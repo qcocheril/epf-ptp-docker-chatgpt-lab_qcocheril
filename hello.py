@@ -27,7 +27,7 @@ def generate_code():
     args = request.args
     language =args.get("language")
     code =args.get("code")
-    message =f"Write the following request {code} in {language}."
+    message=f"Write the following request {code} in {language}."
     print(message)
     completion = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
