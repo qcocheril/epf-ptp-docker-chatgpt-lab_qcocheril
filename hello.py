@@ -33,6 +33,6 @@ def generate_code():
     encode_message= urllib.parse.quote(message)
     completion = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
-        messages=[{"role": "user", "content": message}]
+        messages=[{"role": "user", "content": encode_message}]
     )
     return completion['choices'][0]['message']['content']
