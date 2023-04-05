@@ -1,7 +1,7 @@
 from flask import Flask,request
 import os
 import openai
-import urllib.parse
+
 
 app = Flask(__name__)
 
@@ -30,9 +30,8 @@ def generate_code():
     code =args.get("code")
     message=f"Write the following request {code} in {language}."
     print(message)
-    encode_message= urllib.parse.quote(message)
     completion = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
-        messages=[{"role": "user", "content": encode_message}]
+        messages=[{"role": "user", "content": message}]
     )
     return completion['choices'][0]['message']['content']
